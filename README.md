@@ -24,8 +24,9 @@ A Comparative Subnational Panel Study of Healthcare Access in England and Brazil
   <a href="#data-first-workflow">Data Workflow</a> •
   <a href="#planned-data-sources">Data Sources</a> •
   <a href="#repository-structure">Repository Structure</a> •
-  <a href="#project-management">Project Management</a> •
-  <a href="#planned-next-steps">Next Steps</a>
+  <a href="#documentation-strategy">Documentation Strategy</a> •
+  <a href="#expected-methods">Expected Methods</a> •
+  <a href="#limitations">Limitations</a>
 </p>
 
 ## Overview
@@ -195,52 +196,6 @@ Key files include:
 * `docs/data-dictionary.md` — final variable definitions for the analytic dataset
 * `docs/data-findings.md` — descriptive findings and feasibility observations before full modeling
 
-## Project Management
-
-GitHub is used as the project management system as well as the code repository.
-
-### Issues
-
-Issues are used to track discrete research and data tasks, such as:
-
-* Collect England waiting time data
-* Collect Brazil workforce data
-* Compare subnational territorial units
-* Define harmonized infrastructure variables
-* Audit missingness in the master panel
-
-### Project Board
-
-A GitHub Project board is used to organize workflow stages, typically with columns such as:
-
-* Backlog
-* To do
-* In progress
-* Blocked
-* Done
-
-### Branches
-
-Major changes are handled through branches, for example:
-
-* `data-england`
-* `data-brazil`
-* `cleaning`
-* `harmonization`
-* `fe-models`
-
-### Milestones and Releases
-
-Planned milestone tags include:
-
-* `v0.1-project-setup`
-* `v0.2-raw-data-collected`
-* `v0.3-feasibility-mapped`
-* `v0.4-master-panel-built`
-* `v0.5-descriptive-analysis`
-* `v0.6-first-results`
-* `v0.7-literature-review`
-* `v0.8-paper-draft`
 
 ## Reproducibility Principles
 
@@ -273,7 +228,7 @@ Extensions may include:
 
 These methods remain provisional until the data structure is finalized.
 
-## Limitations Acknowledged from the Start
+## Limitations
 
 Several challenges are built into the project design:
 

@@ -121,3 +121,29 @@ This will make it easier to track progress at the level of major research phases
 * Create the phase Issues
 * Assign labels and milestones
 * Begin work on data planning
+
+---
+
+ ## [2026-04-19] First cleaned England RTT regional dataset created
+
+**Phase:**  
+Data cleaning
+
+**Summary:**  
+Created the first cleaned England access dataset using NHS RTT incomplete commissioner data at the regional level for February 2026.
+
+**Details:**  
+- Used the `Region` tab from the RTT Incomplete Commissioner workbook
+- Filtered to `Treatment Function Code = C_999` to keep total rows only
+- Dropped national aggregate rows
+- Standardized variable names
+- Added period fields (`year`, `month`, `period`)
+- Saved cleaned output to `data/interim/england_rtt_region_2026_02.csv`
+
+**Implications for project design:**  
+This confirms that England regional RTT access data can be cleaned into a usable subnational dataset. The regional level is currently a feasible pilot unit for England.
+
+**Next actions:**  
+- repeat cleaning for additional months
+- assess whether region codes remain stable over time
+- begin identifying England population and capacity datasets at compatible geography
