@@ -10,6 +10,24 @@ A Comparative Subnational Panel Study of Healthcare Access in England and Brazil
 
 <h4 align="center">A reproducible research project examining how healthcare infrastructure and workforce capacity are associated with access to care across subnational regions in England and Brazil.</h4>
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-95ba91?style=for-the-badge&logo=python&logoColor=white" alt="Python" height="15" />
+  <img src="https://img.shields.io/badge/Pandas-82a976?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas" height="15" />
+  <img src="https://img.shields.io/badge/Jupyter-528562?style=for-the-badge&logo=jupyter&logoColor=white" alt="Jupyter" height="15" />
+  <img src="https://img.shields.io/badge/Markdown-4d8d7f?style=for-the-badge&logo=markdown&logoColor=white" alt="Markdown" height="15" />
+  <img src="https://img.shields.io/badge/GitHub-227257?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" height="15" />
+</p>
+
+<p align="center">
+  <a href="#overview">Overview</a> •
+  <a href="#research-question">Research Question</a> •
+  <a href="#data-first-workflow">Data Workflow</a> •
+  <a href="#planned-data-sources">Data Sources</a> •
+  <a href="#repository-structure">Repository Structure</a> •
+  <a href="#project-management">Project Management</a> •
+  <a href="#planned-next-steps">Next Steps</a>
+</p>
+
 ## Overview
 
 This repository contains the data, code, documentation, and manuscript materials for a comparative subnational panel analysis of healthcare access in two publicly funded health systems: the National Health Service (NHS) in England and the Sistema Único de Saúde (SUS) in Brazil.
