@@ -1,14 +1,12 @@
-
 <h1 align="center">
   <br>
   <a href="docs/assets/logo.png"><img src="docs/assets/logo.png" alt="Project Logo" width="200"></a>
   <br>
-A Comparative Subnational Panel Study of Healthcare Access in England and Brazil
+  A Comparative Subnational Panel Study of Cancer Treatment Timelines in England and Brazil
   <br>
 </h1>
 
-
-<h4 align="center">A reproducible research project examining how healthcare infrastructure and workforce capacity are associated with access to care across subnational regions in England and Brazil.</h4>
+<h4 align="center">A reproducible comparative research project on delays in access to cancer treatment across subnational health systems in England and Brazil.</h4>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-95ba91?style=for-the-badge&logo=python&logoColor=white" alt="Python" height="15" />
@@ -19,157 +17,188 @@ A Comparative Subnational Panel Study of Healthcare Access in England and Brazil
 </p>
 
 <p align="center">
-  <a href="#overview">Overview</a> •
-  <a href="#research-question">Research Question</a> •
-  <a href="#data-first-workflow">Data Workflow</a> •
-  <a href="#planned-data-sources">Data Sources</a> •
-  <a href="#repository-structure">Repository Structure</a> •
-  <a href="#documentation-strategy">Documentation Strategy</a> •
-  <a href="#expected-methods">Expected Methods</a> •
+  <a href="#overview">Overview</a> -
+  <a href="#scope-change">Scope Change</a> -
+  <a href="#research-question">Research Question</a> -
+  <a href="#current-data">Current Data</a> -
+  <a href="#workflow">Workflow</a> -
+  <a href="#repository-structure">Repository Structure</a> -
   <a href="#limitations">Limitations</a>
 </p>
 
 ## Overview
 
-This repository contains the data, code, documentation, and manuscript materials for a comparative subnational panel analysis of healthcare access in two publicly funded health systems: the National Health Service (NHS) in England and the Sistema Único de Saúde (SUS) in Brazil.
+This repository contains the data, code, documentation, and manuscript materials for a comparative study of cancer-care access timeliness in England and Brazil.
 
-The project focuses on a central empirical question: how strongly are healthcare infrastructure constraints—such as hospital beds, workforce availability, and facility distribution—associated with access to care across regions and over time?
+The project originally began as a broader subnational study of healthcare access, infrastructure, and workforce capacity across two publicly funded health systems: the National Health Service (NHS) in England and the Sistema Único de Saúde (SUS) in Brazil. Data discovery changed the feasible design. England has usable general waiting-time data through NHS Referral to Treatment (RTT) releases, but a directly comparable open national general waiting-time dataset for Brazil was not identified. The strongest public Brazil access-delay source found so far is oncology-specific.
 
-The study is designed as a data-first research project. The first priority is to identify what subnational data are available, how comparable they are across countries, and which empirical design is feasible. Literature review and full paper framing will follow after the data structure, variable availability, and comparability issues are clear.
+The project has therefore narrowed to a more coherent comparative outcome: delays in access to cancer treatment.
+
+## Scope Change
+
+Current scope: **oncology treatment timeliness, measured through subnational delay indicators in England and Brazil**.
+
+This change strengthens comparability by focusing on a shared care domain rather than trying to compare England's general elective RTT pathway with a non-equivalent Brazil data source. The previous England RTT work remains useful as project history and as evidence from the feasibility stage, but it is no longer the main comparative outcome.
+
+The current pilot design uses:
+
+* England cancer waiting times at Integrated Care Board (ICB) level.
+* Brazil oncology treatment-delay data at state level.
+* A shared headline concept: the share of cancer-treatment cases occurring beyond the main timely-treatment threshold.
 
 ## Research Question
 
-To what extent do healthcare infrastructure and workforce constraints affect access to healthcare services across subnational regions in England and Brazil?
+How does the timeliness of access to cancer treatment vary across subnational regions in England and Brazil?
 
 ## Secondary Questions
 
-* Which infrastructure factors are the strongest predictors of healthcare access outcomes?
-* How do the effects of infrastructure constraints differ between England and Brazil?
-* To what extent do regional demographic and socioeconomic characteristics moderate these relationships?
-* Are there lagged relationships between changes in healthcare capacity and changes in healthcare access?
-
-## Working Hypotheses
-
-* Lower levels of healthcare infrastructure and workforce capacity are associated with poorer access outcomes.
-* The relationship between capacity constraints and access is stronger in regions with greater demographic pressure or lower baseline capacity.
-* The strength of the relationship differs between England and Brazil because of institutional and structural differences.
-* Infrastructure changes may affect access with a lag rather than immediately.
+* Which regions have higher shares of cancer-treatment cases occurring after 60 days?
+* How do delay distributions differ between England and Brazil?
+* How comparable are England's cancer waiting-time standards and Brazil's oncology delay bands?
+* Can the pilot files be extended into a multi-period subnational panel?
+* What demographic, socioeconomic, or health-system variables could later be added to explain variation in treatment timeliness?
 
 ## Project Status
 
-Current phase: **Project setup and data feasibility mapping**.
+Current phase: **oncology pilot dataset construction and comparability assessment**.
 
-The immediate goal is to determine:
+Completed so far:
 
-* Which datasets are available for England and Brazil,
-* Which territorial units are usable and consistent over time,
-* Which variables are conceptually comparable,
-* Which primary access outcomes are empirically feasible,
-* What final panel design can realistically be implemented.
+* England RTT regional panel was built during the initial feasibility stage.
+* Brazil general waiting-time data search did not identify a strong open national RTT-equivalent source.
+* Brazil oncology treatment-delay data was identified as the strongest public access-delay candidate.
+* England cancer waiting-time data was identified as a better comparator than general RTT.
+* Pilot cleaned oncology datasets were created for December 2025.
 
-## Research Design
+Immediate next steps:
 
-The project uses a comparative quantitative design based on subnational panel data. The planned empirical strategy is fixed-effects regression, with region and year fixed effects, to estimate within-region associations between changes in healthcare capacity and changes in healthcare access over time.
+* Validate the England and Brazil oncology pilot datasets.
+* Decide whether to retain December 2025 as a pilot only or extend to a longer monthly panel.
+* Update data documentation and comparability notes.
+* Define the first descriptive tables and figures.
 
-The study does **not** assume from the outset that all estimates can be interpreted as fully causal. The primary goal is to establish robust comparative evidence on within-region relationships between infrastructure constraints and access outcomes, while carefully documenting issues of measurement, comparability, and endogeneity.
-
-## Data-First Workflow
-
-This repository is organized around a data-first workflow:
-
-1. Set up the research repository and project management structure.
-2. Identify candidate data sources for England and Brazil.
-3. Assess data availability, consistency, and comparability.
-4. Build country-specific cleaned datasets.
-5. Harmonize variables conceptually across countries.
-6. Construct a master panel dataset.
-7. Run descriptive analysis and feasibility checks.
-8. Estimate preliminary econometric models.
-9. Conduct literature review and paper framing after the empirical design is confirmed.
-10. Develop the full research paper.
-
-This sequence is intentional: the project will be defined by what can be credibly measured and compared, rather than by a theoretical design that later proves infeasible in the data.
-
-## Planned Data Sources
+## Current Data
 
 ### England
 
-Planned sources include:
+Current raw source:
 
-* NHS England administrative and performance data
-* NHS workforce and capacity statistics
-* Office for National Statistics (ONS) demographic data
-* ONS socioeconomic indicators
+* `data/raw/england/oncology/england_oncology_cwt_commissioner_2025_12.csv`
+
+Current cleaned file:
+
+* `data/interim/england_oncology_62d_icb_2025_12.csv`
+
+Unit of observation:
+
+* Integrated Care Board-month
+
+Current pilot period:
+
+* December 2025
+
+Main cleaning script:
+
+* `src/data_cleaning/clean_england_oncology_62d.py`
+
+Current England outcome:
+
+* `pct_after_62`: share of cancer waiting-time cases recorded after 62 days among filtered ICB commissioner rows.
+
+The England pilot filters to commissioner-basis rows for the 62-day cancer standard, all cancers, all routes, and all treatment modalities. It keeps ICB rows and derives a headline percentage delayed beyond the 62-day threshold.
 
 ### Brazil
 
-Planned sources include:
+Current raw source:
 
-* DATASUS administrative health data
-* CNES-related infrastructure and workforce records
-* Instituto Brasileiro de Geografia e Estatística (IBGE) demographic data
-* IBGE socioeconomic indicators
+* `data/raw/brazil/oncology/brazil_oncology_painel_state_diagnosis_2025_12.csv`
 
-These sources are subject to revision as data feasibility work progresses.
+Current cleaned file:
 
-## Core Variable Families
+* `data/interim/brazil_oncology_delay_state_2025_12.csv`
 
-### Candidate access outcomes
+Unit of observation:
 
-* Waiting times
-* Treatment delays
-* Backlog or congestion indicators
-* Service utilization measures
-* Other access-related performance indicators where comparable
+* State-month, with the current cleaned file also retaining the Brazil total aggregate row for checking.
 
-### Candidate infrastructure variables
+Current pilot period:
 
-* Hospital beds per capita
-* Physicians per capita
-* Nurses per capita
-* Facility density
-* Hospital or clinic availability
+* December 2025
 
-### Candidate controls
+Main cleaning script:
 
-* Population density
-* Age structure
-* Population size
-* Income or deprivation indicators
-* Poverty or socioeconomic conditions
-* Year fixed effects and other common shocks
+* `src/data_cleaning/clean_brazil_oncology_delay.py`
 
-The final variable set will depend on availability, measurement consistency, and cross-country comparability.
+Current Brazil outcomes:
+
+* `pct_over_60`: share of known nonnegative-delay oncology cases occurring after 60 days.
+* `pct_over_120`: share of known nonnegative-delay oncology cases occurring after 120 days.
+
+The Brazil pilot uses treatment-delay bands from the oncology panel, aggregates delay bins into within-60-day and over-60-day counts, and excludes negative-delay cases from the main denominator for now.
+
+## Workflow
+
+The project still follows a data-first workflow:
+
+1. Identify feasible access-timeliness datasets for each country.
+2. Build country-specific cleaned pilot files.
+3. Assess geography, time structure, and variable comparability.
+4. Extend pilots into monthly panels if feasible.
+5. Harmonize outcome concepts rather than forcing exact variable equivalence.
+6. Produce descriptive analysis of regional variation.
+7. Add contextual variables if comparable denominators and covariates are available.
+8. Develop the paper framing after the empirical design is stable.
+
+## Reproducibility
+
+Install dependencies with:
+
+```bash
+pip install -r requirements.txt
+```
+
+Clean the current England oncology pilot:
+
+```bash
+python src/data_cleaning/clean_england_oncology_62d.py data/raw/england/oncology/england_oncology_cwt_commissioner_2025_12.csv
+```
+
+Clean the current Brazil oncology pilot:
+
+```bash
+python src/data_cleaning/clean_brazil_oncology_delay.py data/raw/brazil/oncology/brazil_oncology_painel_state_diagnosis_2025_12.csv
+```
 
 ## Repository Structure
 
 ```text
 healthcare-access-england-brazil/
-│
+|
 ├── README.md
 ├── LICENSE
-├── .gitignore
 ├── requirements.txt
-│
+|
 ├── data/
 │   ├── raw/
+│   │   ├── brazil/
+│   │   │   └── oncology/
+│   │   └── england/
+│   │       └── oncology/
 │   ├── interim/
 │   ├── processed/
 │   └── README.md
-│
+|
 ├── src/
-│   ├── data_collection/
 │   ├── data_cleaning/
-│   ├── harmonization/
+│   │   ├── clean_brazil_oncology_delay.py
+│   │   ├── clean_england_oncology_62d.py
+│   │   ├── clean_england_rtt_region.py
+│   │   └── build_england_rtt_region_panel.py
 │   ├── analysis/
+│   ├── data_collection/
+│   ├── harmonization/
 │   └── utils/
-│
-├── notebooks/
-├── outputs/
-│   ├── tables/
-│   ├── figures/
-│   └── maps/
-│
+|
 ├── docs/
 │   ├── assets/
 │   ├── proposal.md
@@ -178,67 +207,52 @@ healthcare-access-england-brazil/
 │   ├── comparability-notes.md
 │   ├── data-dictionary.md
 │   └── data-findings.md
-│
+|
+├── notebooks/
+├── outputs/
+│   ├── tables/
+│   ├── figures/
+│   └── maps/
 └── paper/
     └── manuscript.md
 ```
 
 ## Documentation Strategy
 
-This project treats documentation as part of the research process, not as an afterthought.
+This project treats documentation as part of the research process.
 
 Key files include:
 
-* `docs/proposal.md` — original research proposal
-* `docs/project-log.md` — ongoing record of decisions, issues, and workflow notes
-* `docs/data-plan.md` — candidate datasets, sources, units, and variable mapping
-* `docs/comparability-notes.md` — notes on variable equivalence and cross-country comparability
-* `docs/data-dictionary.md` — final variable definitions for the analytic dataset
-* `docs/data-findings.md` — descriptive findings and feasibility observations before full modeling
-
-
-## Reproducibility Principles
-
-This repository is intended to support transparent and reproducible research.
-
-Principles include:
-
-* Preserving raw data separately from cleaned and processed data,
-* Documenting all variable transformations,
-* Using scripts rather than manual spreadsheet editing wherever possible,
-* Keeping code modular and traceable,
-* Recording comparability decisions explicitly,
-* Separating exploratory work from final analytic workflows.
+* `docs/proposal.md` - original research proposal.
+* `docs/project-log.md` - running record of project decisions and scope changes.
+* `docs/data-plan.md` - planned source inventory and variable mapping.
+* `docs/comparability-notes.md` - notes on cross-country measurement differences.
+* `docs/data-dictionary.md` - variable definitions for cleaned and analytic files.
+* `docs/data-findings.md` - descriptive findings and feasibility observations.
 
 ## Expected Methods
 
-The main planned econometric approach is fixed-effects panel regression of the form:
+The immediate methods are descriptive and diagnostic:
 
-$$
-Access_{it} = \beta_0 + \beta_1 Infrastructure_{it} + \gamma X_{it} + \mu_i + \tau_t + \epsilon_{it}
-$$
+* Validate cleaned country-specific pilot datasets.
+* Compare delay distributions and headline delay shares.
+* Assess whether a multi-month panel can be built.
+* Document measurement differences between England's 62-day cancer waiting-time standard and Brazil's oncology delay bands.
 
-Extensions may include:
-
-* Lagged infrastructure variables,
-* Pooled country interactions,
-* Country-specific models,
-* Alternative access measures,
-* Robustness checks using alternative lag structures or model forms.
-
-These methods remain provisional until the data structure is finalized.
+If a longer panel is feasible, later analysis may use subnational panel methods with region and time fixed effects. Any regression design will be treated as observational and interpreted cautiously.
 
 ## Limitations
 
-Several challenges are built into the project design:
+Several challenges shape the current design:
 
-* Direct cross-country equivalence of variables may be limited,
-* Territorial units may differ in scale and administrative meaning,
-* Dome infrastructure measures may refer to different scopes of care,
-* Access outcomes may not be perfectly comparable,
-* Observational panel methods do not fully eliminate endogeneity concerns.
+* England and Brazil use different cancer-care measurement systems.
+* England's pilot geography is ICBs, while Brazil's pilot geography is states.
+* England's headline threshold is based on the 62-day cancer standard; Brazil's current headline threshold is constructed from treatment-delay bands over 60 days.
+* The current cleaned datasets cover a pilot month, not yet a full panel.
+* The project currently measures access timeliness, not infrastructure or workforce capacity.
+* Observational comparisons cannot by themselves establish causal effects.
 
-The project therefore adopts a conceptual harmonization approach and interprets findings with appropriate caution.
+The project therefore uses conceptual harmonization and treats comparability as an empirical object to document, not as an assumption.
 
 ## Author
 

@@ -148,6 +148,8 @@ This confirms that England regional RTT access data can be cleaned into a usable
 - Assess whether region codes remain stable over time
 - Begin identifying England population and capacity datasets at compatible geography
 
+---
+
 ## [2026-04-19] Generalized England RTT regional cleaning pipeline
 
 **Phase:**  
@@ -291,3 +293,27 @@ The overall methodology remains viable, but the dependent-variable domain is bec
 - Decide whether to adopt an explicitly oncology-focused framing
 - Build pilot oncology datasets for both countries
 - Update `docs/data-plan.md` and `docs/comparability-notes.md` to reflect the design shift
+
+---
+
+## [2026-04-19] Project scope shifted to oncology access timeliness
+
+**Phase:**  
+Project design
+
+**Summary:**  
+Shifted the empirical focus from broad healthcare access to timeliness of access to cancer care.
+
+**Details:**  
+- General RTT data was successfully processed for England but was not strongly comparable to the best public Brazil access dataset.
+- Brazil oncology treatment-delay data emerged as the strongest public candidate outcome.
+- England oncology timing data appears to provide a better conceptual match to Brazil than general elective RTT.
+- Decided to build oncology pilot datasets for both countries.
+
+**Implications for project design:**  
+The methodology remains valid, but the dependent variable domain is now narrower and more coherent across countries.
+
+**Next actions:**  
+- Build England oncology pilot dataset
+- Build Brazil oncology pilot dataset
+- Assess geographic level and time structure for both
